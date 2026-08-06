@@ -1,0 +1,149 @@
+#galeria {
+    padding: 120px 8%;
+    background: var(--cor-fundo-secundario);
+}
+
+.section-title {
+    max-width: 760px;
+    margin: 0 auto 60px;
+    text-align: center;
+}
+
+.section-title > span {
+    color: var(--cor-rosa);
+
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.section-title h2 {
+    margin-top: 12px;
+
+    color: var(--cor-branca);
+
+    font-family: var(--fonte-titulo);
+    font-size: clamp(2.2rem, 5vw, 4rem);
+}
+
+.section-title p {
+    margin-top: 18px;
+
+    color: var(--cor-texto-secundario);
+
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/* VÍDEOS */
+
+.gallery-videos {
+    max-width: 1000px;
+    margin: 0 auto 50px;
+
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.gallery-videos video {
+    width: 320px;
+    aspect-ratio: 9 / 16;
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 22px;
+    border: 1px solid var(--cor-borda);
+
+    background: #000;
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, .35),
+        0 0 25px rgba(236, 0, 140, .08);
+
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease;
+}
+
+.gallery-videos video:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 30px 60px rgba(0, 0, 0, .45),
+        0 0 30px rgba(236, 0, 140, .18);
+}
+
+/* FOTOS */
+
+.gallery-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+
+    columns: 4 260px;
+    column-gap: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    margin-bottom: 20px;
+
+    display: block;
+    break-inside: avoid;
+
+    border: 1px solid var(--cor-borda);
+    border-radius: 20px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.4s ease,
+        filter 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.gallery-grid img:hover {
+    transform: translateY(-5px);
+
+    filter: brightness(1.06);
+
+    border-color: var(--cor-borda-rosa);
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.35),
+        0 0 25px rgba(236, 0, 140, 0.12);
+}
+
+@media (max-width: 800px) {
+    #galeria {
+        padding: 90px 6%;
+    }
+
+    .gallery-videos {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        columns: 2 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    #galeria {
+        padding: 75px 5%;
+    }
+
+    .gallery-grid {
+        columns: 1;
+    }
+
+    .gallery-videos video,
+    .gallery-grid img {
+        border-radius: 16px;
+    }
+}

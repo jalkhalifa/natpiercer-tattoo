@@ -1,0 +1,238 @@
+#depoimentos {
+    padding: 120px 8%;
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(236, 0, 140, 0.08),
+            transparent 32%
+        ),
+        var(--cor-fundo-principal);
+}
+
+#depoimentos::before {
+    content: "";
+
+    width: 340px;
+    height: 340px;
+
+    position: absolute;
+    top: -180px;
+    right: -160px;
+
+    border: 1px solid rgba(236, 0, 140, 0.14);
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+#depoimentos h2 {
+    max-width: 1400px;
+    margin: 0 auto 58px;
+
+    position: relative;
+
+    color: var(--cor-branca);
+
+    font-family: var(--fonte-titulo);
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#depoimentos h2::before {
+    content: "✦";
+
+    margin-bottom: 14px;
+
+    display: block;
+
+    color: var(--cor-rosa);
+
+    font-family: var(--fonte-texto);
+    font-size: 0.85rem;
+}
+
+#depoimentos h2::after {
+    content: "";
+
+    width: 65px;
+    height: 2px;
+    margin: 22px auto 0;
+
+    display: block;
+
+    background: var(--cor-rosa);
+}
+
+.reviews {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    align-items: start;
+}
+
+.reviews .review-screenshot {
+    min-width: 0;
+    padding: 10px;
+
+    position: relative;
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.055),
+            rgba(255, 255, 255, 0.018)
+        );
+
+    box-shadow:
+        0 22px 50px rgba(0, 0, 0, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.reviews .review-screenshot::before {
+    content: "";
+
+    width: 90px;
+    height: 90px;
+
+    position: absolute;
+    top: -48px;
+    right: -48px;
+    z-index: 1;
+
+    border-radius: 50%;
+
+    background: rgba(236, 0, 140, 0.18);
+    filter: blur(22px);
+
+    opacity: 0;
+
+    transition: opacity 0.35s ease;
+
+    pointer-events: none;
+}
+
+.reviews .review-screenshot:hover {
+    transform: translateY(-7px);
+
+    border-color: rgba(236, 0, 140, 0.42);
+
+    box-shadow:
+        0 30px 65px rgba(0, 0, 0, 0.38),
+        0 0 30px rgba(236, 0, 140, 0.08);
+}
+
+.reviews .review-screenshot:hover::before {
+    opacity: 1;
+}
+
+.review-screenshot a {
+    display: block;
+    overflow: hidden;
+
+    border-radius: 14px;
+
+    color: inherit;
+    background: #ffffff;
+    text-decoration: none;
+
+    outline: none;
+}
+
+.review-screenshot a:focus-visible {
+    box-shadow:
+        0 0 0 3px var(--cor-fundo-principal),
+        0 0 0 5px var(--cor-rosa);
+}
+
+.review-screenshot img {
+    width: 100%;
+    height: auto;
+
+    display: block;
+
+    object-fit: contain;
+
+    background: #ffffff;
+
+    transition:
+        transform 0.4s ease,
+        filter 0.4s ease;
+}
+
+.review-screenshot:hover img {
+    transform: scale(1.015);
+    filter: brightness(1.02);
+}
+
+@media (max-width: 1000px) {
+    #depoimentos {
+        padding: 100px 6%;
+    }
+
+    .reviews {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+}
+
+@media (max-width: 620px) {
+    #depoimentos {
+        padding: 80px 5%;
+    }
+
+    #depoimentos h2 {
+        margin-bottom: 40px;
+
+        font-size: clamp(2.2rem, 12vw, 3.4rem);
+    }
+
+    .reviews {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .reviews .review-screenshot {
+        padding: 8px;
+        border-radius: 18px;
+    }
+
+    .review-screenshot a {
+        border-radius: 11px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reviews .review-screenshot,
+    .review-screenshot img {
+        transition: none;
+    }
+
+    .reviews .review-screenshot:hover {
+        transform: none;
+    }
+
+    .review-screenshot:hover img {
+        transform: none;
+    }
+}

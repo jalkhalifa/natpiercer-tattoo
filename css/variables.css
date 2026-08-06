@@ -1,0 +1,40 @@
+/* ========================================
+   VARIÁVEIS GLOBAIS
+======================================== */
+
+:root {
+    /* Fundos */
+    --cor-fundo: #0d0d0d;
+    --cor-fundo-secundario: #121212;
+    --cor-card: #181818;
+    --cor-card-claro: #202020;
+
+    /* Identidade visual */
+    --cor-rosa: #ec008c;
+    --cor-rosa-claro: #f2c9dd;
+    --cor-destaque: #ec008c;
+
+    /* Textos */
+    --cor-branca: #ffffff;
+    --cor-texto: #f5f5f5;
+    --cor-texto-secundario: #c7c7c7;
+    --cor-texto-suave: #929292;
+
+    /* Bordas */
+    --cor-borda: rgba(255, 255, 255, 0.10);
+    --cor-borda-rosa: rgba(236, 0, 140, 0.38);
+
+    /* Fontes */
+    --fonte-titulo: "Cinzel", serif;
+    --fonte-texto: "Poppins", sans-serif;
+
+    /* Bordas arredondadas */
+    --raio-pequeno: 8px;
+    --raio-medio: 16px;
+    --raio-grande: 24px;
+    --raio-botao: 999px;
+
+    /* Sombras */
+    --sombra-card: 0 20px 50px rgba(0, 0, 0, 0.35);
+    --sombra-rosa: 0 0 30px rgba(236, 0, 140, 0.20);
+}

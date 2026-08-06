@@ -1,0 +1,468 @@
+/* ========================================
+   SEÇÃO SOBRE
+======================================== */
+
+#sobre {
+    padding: 110px 8%;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(236, 0, 140, 0.09),
+            transparent 34%
+        ),
+        radial-gradient(
+            circle at bottom left,
+            rgba(242, 201, 221, 0.035),
+            transparent 28%
+        ),
+        var(--cor-fundo);
+}
+
+#sobre > h2 {
+    margin-bottom: 60px;
+
+    color: var(--cor-branca);
+
+    font-family: var(--fonte-titulo);
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: 0.06em;
+    text-align: center;
+}
+
+#sobre > h2::after {
+    content: "";
+
+    display: block;
+
+    width: 72px;
+    height: 3px;
+    margin: 18px auto 0;
+
+    border-radius: var(--raio-botao);
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--cor-rosa),
+            var(--cor-rosa-claro)
+        );
+
+    box-shadow:
+        0 0 18px rgba(236, 0, 140, 0.32);
+}
+
+.sobre-container {
+    width: min(var(--largura-maxima), 100%);
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: minmax(320px, 430px) minmax(0, 1fr);
+    gap: 75px;
+    align-items: start;
+}
+
+/* ========================================
+   FOTO
+======================================== */
+
+.sobre-foto {
+    position: sticky;
+    top: 120px;
+
+    min-height: 620px;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--cor-borda);
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.04),
+            rgba(255, 255, 255, 0.01)
+        ),
+        var(--cor-card);
+
+    color: var(--cor-texto-suave);
+
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    box-shadow:
+        var(--sombra-card),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+    isolation: isolate;
+}
+
+.sobre-foto::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.58),
+            transparent 48%
+        );
+
+    pointer-events: none;
+}
+
+.sobre-foto::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+
+    border: 1px solid transparent;
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(236, 0, 140, 0.22),
+            transparent 36%,
+            rgba(242, 201, 221, 0.08)
+        ) border-box;
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) padding-box,
+        linear-gradient(#fff 0 0);
+
+    mask:
+        linear-gradient(#fff 0 0) padding-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+
+    pointer-events: none;
+}
+
+.sobre-foto img {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center 20%;
+
+    transition:
+        transform 0.65s ease,
+        filter 0.65s ease;
+}
+
+.sobre-foto:hover img {
+    transform: scale(1.045);
+    filter: brightness(1.04);
+}
+
+/* ========================================
+   TEXTO
+======================================== */
+
+.sobre-texto {
+    max-width: 720px;
+}
+
+.sobre-texto h3 {
+    margin-bottom: 28px;
+
+    color: var(--cor-branca);
+
+    font-family: var(--fonte-titulo);
+    font-size: clamp(2rem, 3vw, 3rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: 0.03em;
+}
+
+.sobre-texto h3::before {
+    content: "";
+
+    display: inline-block;
+
+    width: 32px;
+    height: 2px;
+    margin-right: 14px;
+    vertical-align: middle;
+
+    background: var(--cor-rosa);
+
+    box-shadow:
+        0 0 12px rgba(236, 0, 140, 0.35);
+}
+
+.sobre-texto > p {
+    margin-bottom: 22px;
+
+    color: var(--cor-texto-secundario);
+
+    font-size: 1rem;
+    line-height: 1.9;
+
+    text-align: justify;
+    text-justify: inter-word;
+
+    hyphens: auto;
+}
+
+.sobre-texto > p:first-of-type {
+    color: var(--cor-branca);
+
+    font-size: 1.08rem;
+    font-weight: 400;
+}
+
+/* ========================================
+   CARD GUEST SPOT
+======================================== */
+
+.guest-card {
+    position: relative;
+    overflow: hidden;
+
+    margin-top: 45px;
+    padding: 38px;
+
+    border: 1px solid var(--cor-borda-rosa);
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(236, 0, 140, 0.11),
+            rgba(242, 201, 221, 0.025) 45%,
+            rgba(255, 255, 255, 0.018)
+        ),
+        rgba(18, 18, 18, 0.94);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    box-shadow:
+        var(--sombra-card),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+    transition:
+        transform var(--transicao),
+        border-color var(--transicao),
+        box-shadow var(--transicao);
+}
+
+.guest-card:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(236, 0, 140, 0.5);
+
+    box-shadow:
+        0 30px 75px rgba(0, 0, 0, 0.42),
+        0 14px 45px rgba(236, 0, 140, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.guest-card::before {
+    content: "";
+
+    position: absolute;
+    top: -120px;
+    right: -120px;
+
+    width: 270px;
+    height: 270px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(236, 0, 140, 0.15);
+
+    filter: blur(58px);
+
+    pointer-events: none;
+}
+
+.guest-card::after {
+    content: "";
+
+    position: absolute;
+    bottom: -140px;
+    left: -120px;
+
+    width: 240px;
+    height: 240px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(242, 201, 221, 0.05);
+
+    filter: blur(60px);
+
+    pointer-events: none;
+}
+
+.guest-label {
+    position: relative;
+    z-index: 1;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 18px;
+    padding: 8px 14px;
+
+    border: 1px solid var(--cor-borda-rosa);
+    border-radius: var(--raio-botao);
+
+    background:
+        rgba(236, 0, 140, 0.09);
+
+    color: var(--cor-rosa);
+
+    font-size: 0.78rem;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.guest-label::before {
+    content: "";
+
+    width: 8px;
+    height: 8px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: var(--cor-rosa);
+
+    box-shadow:
+        0 0 14px rgba(236, 0, 140, 0.85);
+}
+
+.guest-card h4 {
+    position: relative;
+    z-index: 1;
+
+    margin-bottom: 22px;
+
+    color: var(--cor-branca);
+
+    font-family: var(--fonte-titulo);
+    font-size: clamp(1.45rem, 2.5vw, 2.1rem);
+    line-height: 1.2;
+    letter-spacing: 0.025em;
+}
+
+.guest-card p {
+    position: relative;
+    z-index: 1;
+
+    margin-bottom: 18px;
+
+    color: var(--cor-texto-secundario);
+
+    font-size: 0.98rem;
+    line-height: 1.85;
+
+    text-align: justify;
+    text-justify: inter-word;
+
+    hyphens: auto;
+}
+
+.guest-card .button {
+    position: relative;
+    z-index: 1;
+
+    margin-top: 12px;
+}
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
+@media (max-width: 950px) {
+    #sobre {
+        padding: 90px 6%;
+    }
+
+    .sobre-container {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    .sobre-foto {
+        position: relative;
+        top: auto;
+
+        width: 100%;
+        min-height: 520px;
+    }
+
+    .sobre-texto {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    #sobre {
+        padding: 75px 5%;
+    }
+
+    #sobre > h2 {
+        margin-bottom: 40px;
+    }
+
+    .sobre-foto {
+        min-height: 410px;
+        border-radius: 18px;
+    }
+
+    .sobre-texto h3 {
+        margin-bottom: 22px;
+    }
+
+    .sobre-texto h3::before {
+        width: 22px;
+        margin-right: 10px;
+    }
+
+    .sobre-texto > p,
+    .guest-card p {
+        text-align: left;
+        hyphens: none;
+    }
+
+    .guest-card {
+        margin-top: 35px;
+        padding: 28px 22px;
+        border-radius: 18px;
+    }
+
+    .guest-card .button {
+        width: 100%;
+    }
+}

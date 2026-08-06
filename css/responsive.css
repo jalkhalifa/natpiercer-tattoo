@@ -1,0 +1,52 @@
+@media (max-width: 768px) {
+
+    .gallery-videos {
+        gap: 20px;
+    }
+
+    .gallery-videos video {
+        width: 100%;
+        max-width: 320px;
+    }
+
+}
+
+/* ========================================
+   CORREÇÃO DA LOGO NO CELULAR
+======================================== */
+
+@media (max-width: 768px) {
+    header nav .logo {
+        width: 72px;
+        height: 72px;
+        min-width: 72px;
+        flex: 0 0 72px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        overflow: visible;
+    }
+
+    header nav .logo img {
+        width: 100%;
+        height: 100%;
+
+        display: block;
+
+        object-fit: contain;
+        object-position: center;
+
+        border-radius: 50%;
+    }
+}
+
+@media (max-width: 480px) {
+    header nav .logo {
+        width: 62px;
+        height: 62px;
+        min-width: 62px;
+        flex-basis: 62px;
+    }
+}
