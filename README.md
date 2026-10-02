@@ -4,6 +4,25 @@ Portfólio profissional bilíngue desenvolvido para apresentar o trabalho de Nat
 
 **[Visitar o site](https://natpiercertattoo.com.br/)**
 
+## Prévia do projeto
+
+### Computador
+
+**Página inicial**
+
+![Página inicial do Nat Piercer Tattoo no computador](docs/images/inicio-desktop.png)
+
+**Galeria de trabalhos**
+
+![Galeria de tatuagens e piercings no computador](docs/images/galeria-desktop.png)
+
+### Celular
+
+<p>
+  <img src="docs/images/inicio-mobile.jpeg" alt="Página inicial do Nat Piercer Tattoo no celular" width="280">
+  <img src="docs/images/galeria-mobile.jpeg" alt="Galeria de trabalhos no celular" width="280">
+</p>
+
 ## Objetivo
 
 Reunir a apresentação da artista, seus serviços e trabalhos em um site que facilite o contato profissional. A versão em português e inglês também permite apresentar o portfólio a públicos de diferentes países, incluindo estúdios interessados em colaborações e guest spots.
